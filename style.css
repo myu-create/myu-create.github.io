@@ -171,8 +171,7 @@ body{
 .image-popup img{
    width:600px;
    cursor: pointer;
-   border:10px solid var(--white);
-   background-color: var(--white);
+
 }
 
 
