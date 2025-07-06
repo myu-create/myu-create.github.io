@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 :root{
-   --crimson:crimson;
+   --crimson:rgb(193, 130, 107);
    --black:#333;
    --white:#fff;
    --light-black:#666;
@@ -172,6 +172,7 @@ body{
    width:600px;
    cursor: pointer;
 
+   background-color: var(--white);
 }
 
 
