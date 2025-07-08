@@ -60,7 +60,7 @@ typeBtn.forEach(btn =>{
       typeBtn.forEach(remove => remove.classList.remove('active'));
       let datatype = btn.getAttribute('data-type');
       galleryImages.forEach(img =>{
-         var imgtype = img.getAttribute('src').split('.').pop();
+         var imgtype = img.getAttribute('data-type');
          if(datatype == 'all'){
             img.style.display = 'block';
          }else if(datatype == imgtype){
@@ -80,7 +80,7 @@ yearBtn.forEach(btn =>{
       yearBtn.forEach(remove => remove.classList.remove('active'));
       let datayear = btn.getAttribute('data-year');
       galleryImages.forEach(img =>{
-         var imgyear = img.getAttribute('src').split('-').pop();
+         var imgyear = img.getAttribute('data-year');
          if(datayear == 'all'){
             img.style.display = 'block';
          }else if(datayear == imgyear){
