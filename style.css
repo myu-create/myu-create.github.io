@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
    --crimson: rgb(193, 130, 107);
@@ -153,7 +153,7 @@ body {
    display: none;
 }
 
-/* 이미지 팝업 */
+
 .image-popup {
    position: fixed;
    top: 0; left: 0;
@@ -169,7 +169,7 @@ body {
 }
 
 .image-popup .popup-content {
-  position: relative; /* 이미지와 텍스트 겹치기 위해 필요 */
+  position: relative; 
   display: inline-block;
 }
 
@@ -185,12 +185,12 @@ body {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: transparent; /* ✅ 완전 투명 */
-  color: #000;              /* ✅ 글자 검정색 */
+  background: transparent; 
+  color: #000;              
   padding: 10px 15px;
   font-size: 14px;
   text-align: right;
-  text-shadow: none;        /* ✅ 그림자 제거 */
+  text-shadow: none;        
 }
 
 .popup-info p {
