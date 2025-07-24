@@ -185,13 +185,12 @@ body {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  color: var(--white);
-  background: rgba(0, 0, 0, 0.5);  /* 반투명 검정 배경 */
+  background: transparent; /* ✅ 완전 투명 */
+  color: #000;              /* ✅ 글자 검정색 */
   padding: 10px 15px;
-  border-radius: 5px;
   font-size: 14px;
   text-align: right;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  text-shadow: none;        /* ✅ 그림자 제거 */
 }
 
 .popup-info p {
