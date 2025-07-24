@@ -12,8 +12,15 @@ let imagePop = document.querySelector('.image-popup');
 galleryImages.forEach(img =>{
    img.onclick = () =>{
       let imageSrc = img.getAttribute('src');
+      let imageCat = img.getAttribute('data-cat');
+      let imageYear = img.getAttribute('data-year');
+      let imageType = img.getAttribute('data-material');
+
       imagePop.style.display = 'flex';
       imagePop.querySelector('img').src = imageSrc;
+      imagePop.querySelector('.popup-cat').textContent = `Category: ${imageCat}`;
+      imagePop.querySelector('.popup-year').textContent = `Year: ${imageYear}`;
+      imagePop.querySelector('.popup-material').textContent = `Material: ${imageType}`;
    };
 });
 
@@ -58,12 +65,12 @@ let typeBtn = document.querySelectorAll('.type .btn');
 typeBtn.forEach(btn =>{
    btn.onclick = () =>{
       typeBtn.forEach(remove => remove.classList.remove('active'));
-      let datatype = btn.getAttribute('data-type');
+      let datamaterial = btn.getAttribute('data-material');
       galleryImages.forEach(img =>{
-         var imgtype = img.getAttribute('data-type');
-         if(datatype == 'all'){
+         var imgmaterial = img.getAttribute('data-material');
+         if(datamaterial == 'all'){
             img.style.display = 'block';
-         }else if(datatype == imgtype){
+         }else if(datamaterial == imgmaterial){
             img.style.display = 'block';
          }else{
             img.style.display = 'none';
