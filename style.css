@@ -243,9 +243,9 @@ body {
     position: relative;   
     bottom: auto;
     right: auto;
-    margin-top: 10px;     
+    margin-top: 3px;     
     text-align: left;     
-    font-size: 7px;       
+    font-size: 9px;       
     background: transparent; 
     border-radius: 0;     
     color: #fff;    
@@ -257,7 +257,7 @@ body {
     width: 100%;  
     max-width: 600px;
   }
-}
+
 
 @media (max-width: 768px) {
    .image-popup img {
