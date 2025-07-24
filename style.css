@@ -151,20 +151,21 @@ body {
 }
 
 #side-menu {
-   position: fixed;
-   top: 20px; left: 20px;
-   height: 50px;
-   width: 50px;
-   line-height: 50px;
-   text-align: center;
-   background-color: var(--white);
-   color: var(--black);
-   cursor: pointer;
-   font-size: 25px;
-   z-index: 1100;
-   box-shadow: var(--box-shadow);
-   border: var(--border);
-   display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: transparent; 
+  color: #000;              
+  cursor: pointer;
+  font-size: 25px;
+  z-index: 1100;
+  border: none;            
+  box-shadow: none;        
+  display: none;
 }
 
 
