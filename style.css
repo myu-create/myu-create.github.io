@@ -231,11 +231,31 @@ body {
    }
 }
 
+
+@media (max-width: 768px) {
+  .popup-info {
+    position: relative;   
+    bottom: auto;
+    right: auto;
+    margin-top: 10px;     
+    text-align: left;     
+    font-size: 7px;       
+    background: transparent; 
+    border-radius: 0;     
+  }
+
+  .image-popup img {
+    width: 100%;  
+    max-width: 600px;
+  }
+}
+
 @media (max-width: 768px) {
    .image-popup img {
       width: 100%;
    }
 }
+
 
 @media (max-width: 450px) {
    #side-menu.fa-times {
