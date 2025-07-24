@@ -80,3 +80,29 @@ yearBtn.forEach(btn => {
 document.querySelector('.reset-btn .btn').onclick = () => {
    window.location.reload();
 };
+
+let currentIndex = 0;
+
+function showPopup(index) {
+   currentIndex = index;
+   let img = galleryImages[index];
+   imagePop.style.display = 'flex';
+   imagePop.querySelector('img').src = img.getAttribute('src');
+   imagePop.querySelector('.popup-cat').textContent = `Category: ${img.getAttribute('data-cat')}`;
+   imagePop.querySelector('.popup-year').textContent = `Year: ${img.getAttribute('data-year')}`;
+   imagePop.querySelector('.popup-material').textContent = `Material: ${img.getAttribute('data-material')}`;
+}
+
+// 기존 galleryImages 클릭 이벤트 수정: showPopup 함수 사용
+galleryImages.forEach((img, idx) => {
+   img.onclick = () => {
+      showPopup(idx);
+   };
+});
+
+// 팝업 이미지 클릭 시 다음 이미지로 넘어가기
+imagePop.querySelector('img').onclick = (e) => {
+   e.stopPropagation(); // 팝업 닫기 이벤트 방지
+   currentIndex = (currentIndex + 1) % galleryImages.length;
+   showPopup(currentIndex);
+};

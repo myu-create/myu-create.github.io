@@ -292,3 +292,30 @@ body {
       padding-top: 70px;
    }
 }
+
+@keyframes slideLeftIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.image-popup img {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
