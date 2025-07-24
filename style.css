@@ -66,8 +66,9 @@ body {
 }
 
 .gallery .image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
-  columns: 5 200px;
 }
 
 .gallery .image-container img {
@@ -83,7 +84,7 @@ body {
 
 @media (max-width: 768px) {
   .gallery .image-container {
-    columns: 3 100px; /* 한 줄에 3개 */
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 
