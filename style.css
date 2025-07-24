@@ -77,13 +77,12 @@ body {
    object-fit: cover;
    cursor: pointer;
    margin-bottom: 10px;
-   box-shadow: var(--box-shadow);
-   transition: transform 0.4s ease;
 }
 
 .gallery .image-container img:hover {
-   transform: scale(1.1);
-   z-index: 2;
+   transform: none !important;
+   box-shadow: none !important;
+   transition: none !important;
 }
 
 .side-bar {
