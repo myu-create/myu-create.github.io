@@ -248,7 +248,10 @@ body {
     font-size: 7px;       
     background: transparent; 
     border-radius: 0;     
+    color: #fff;    
+    text-shadow: none; 
   }
+}
 
   .image-popup img {
     width: 100%;  
