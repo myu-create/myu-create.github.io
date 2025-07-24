@@ -66,17 +66,31 @@ body {
 }
 
 .gallery .image-container {
-   gap: 15px;
-   columns: 3 350px;
+  gap: 15px;
+  columns: 5 200px;
 }
 
 .gallery .image-container img {
-   break-inside: avoid;
-   width: 100%;
-   background-color: var(--white);
-   object-fit: cover;
-   cursor: pointer;
-   margin-bottom: 10px;
+  break-inside: avoid;
+  width: 100%;
+  max-width: 200px;
+  background-color: var(--white);
+  object-fit: cover;
+  cursor: pointer;
+  margin-bottom: 10px;
+  
+}
+
+@media (max-width: 768px) {
+  .gallery .image-container {
+    columns: 2 200px; 
+  }
+
+  .gallery .image-container img {
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 200px; 
+  }
 }
 
 .gallery .image-container img:hover {
