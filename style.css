@@ -83,13 +83,13 @@ body {
 
 @media (max-width: 768px) {
   .gallery .image-container {
-    columns: 2 200px; 
+    columns: 3 100px; /* 한 줄에 3개 */
+    gap: 10px;
   }
 
   .gallery .image-container img {
+    max-width: 100%;
     margin-bottom: 8px;
-    width: 100%;
-    max-width: 200px; 
   }
 }
 
