@@ -165,44 +165,49 @@ body {
    display: none;
    align-items: center;
    justify-content: center;
-   padding: 100px 20px;
+   padding: 40px 20px;
    overflow-y: auto;
-   flex-direction: column;
+}
+
+.image-popup .popup-content {
+   background-color: var(--white);
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   gap: 30px;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: var(--box-shadow);
+   max-width: 90vw;
+   flex-wrap: wrap;
 }
 
 .image-popup img {
-   width: 600px;
+   max-width: 500px;
+   height: auto;
+   object-fit: contain;
    background-color: var(--white);
-   margin-bottom: 20px;
+   flex-shrink: 0;
 }
 
-.image-popup .popup-info {
-   background-color: var(--white);
-   padding: 15px 20px;
-   border-radius: 5px;
-   box-shadow: var(--box-shadow);
-   max-width: 600px;
-   width: 100%;
-   text-align: left;
-   color: var(--black);
+.popup-info {
+   max-width: 400px;
    font-size: 16px;
+   color: var(--black);
 }
 
-.image-popup .popup-info p {
-   margin: 5px 0;
-   line-height: 1.4;
-   font-weight: 300;
+.popup-info p {
+   margin-bottom: 10px;
    color: var(--light-black);
 }
 
-.image-popup .close-btn {
+.close-btn {
    position: absolute;
    top: 20px;
    right: 30px;
    font-size: 30px;
    color: var(--white);
    cursor: pointer;
-   z-index: 1300;
 }
 
 @media (max-width: 1200px) {
