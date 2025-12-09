@@ -9,27 +9,6 @@ sideMenu.onclick = () => {
 let galleryImages = document.querySelectorAll('.image-container img');
 let imagePop = document.querySelector('.image-popup');
 
-galleryImages.forEach(img => {
-   img.onclick = () => {
-      let imageSrc = img.getAttribute('src');
-      let imageCat = img.getAttribute('data-cat');
-      let imageYear = img.getAttribute('data-year');
-      let imageMaterial = img.getAttribute('data-material'); // ✅ 수정된 부분
-
-      imagePop.style.display = 'flex';
-      imagePop.querySelector('img').src = imageSrc;
-
-      // ✅ 설명 텍스트 채우기
-      imagePop.querySelector('.popup-cat').textContent = `Category: ${imageCat}`;
-      imagePop.querySelector('.popup-year').textContent = `Year: ${imageYear}`;
-      imagePop.querySelector('.popup-material').textContent = `Material: ${imageMaterial}`;
-   };
-});
-
-imagePop.onclick = () => {
-   imagePop.style.display = 'none';
-};
-
 document.querySelector('#search-box').oninput = () => {
    let value = document.querySelector('#search-box').value.toLowerCase();
    galleryImages.forEach(img => {
@@ -37,6 +16,68 @@ document.querySelector('#search-box').oninput = () => {
       img.style.display = filter.includes(value) ? 'block' : 'none';
    });
 };
+
+// 사용 가능한 필터만 표시하는 함수
+function filterAvailableOptions() {
+   const allImages = document.querySelectorAll('.image-container img');
+   
+   // 카테고리 필터링
+   const categoryButtons = document.querySelectorAll('.category .btn[data-category]');
+   const availableCategories = new Set();
+   
+   allImages.forEach(img => {
+      const category = img.getAttribute('data-cat');
+      if (category) availableCategories.add(category);
+   });
+   
+   categoryButtons.forEach(btn => {
+      const category = btn.getAttribute('data-category');
+      if (category === 'all') {
+         btn.style.display = 'block';
+         return;
+      }
+      btn.style.display = availableCategories.has(category) ? 'block' : 'none';
+   });
+   
+   // 머티리얼 필터링
+   const materialButtons = document.querySelectorAll('.material .btn[data-material]');
+   const availableMaterials = new Set();
+   
+   allImages.forEach(img => {
+      const material = img.getAttribute('data-material');
+      if (material) availableMaterials.add(material);
+   });
+   
+   materialButtons.forEach(btn => {
+      const material = btn.getAttribute('data-material');
+      if (material === 'all') {
+         btn.style.display = 'block';
+         return;
+      }
+      btn.style.display = availableMaterials.has(material) ? 'block' : 'none';
+   });
+   
+   // 년도 필터링
+   const yearButtons = document.querySelectorAll('.year .btn[data-year]');
+   const availableYears = new Set();
+   
+   allImages.forEach(img => {
+      const year = img.getAttribute('data-year');
+      if (year) availableYears.add(year);
+   });
+   
+   yearButtons.forEach(btn => {
+      const year = btn.getAttribute('data-year');
+      if (year === 'all') {
+         btn.style.display = 'block';
+         return;
+      }
+      btn.style.display = availableYears.has(year) ? 'block' : 'none';
+   });
+}
+
+// 페이지 로드 시 실행
+filterAvailableOptions();
 
 let categoryBtn = document.querySelectorAll('.category .btn');
 categoryBtn.forEach(btn => {
@@ -51,7 +92,7 @@ categoryBtn.forEach(btn => {
    };
 });
 
-let typeBtn = document.querySelectorAll('.type .btn');
+let typeBtn = document.querySelectorAll('.material .btn');
 typeBtn.forEach(btn => {
    btn.onclick = () => {
       typeBtn.forEach(remove => remove.classList.remove('active'));
@@ -93,16 +134,18 @@ function showPopup(index) {
    imagePop.querySelector('.popup-material').textContent = `Material: ${img.getAttribute('data-material')}`;
 }
 
-// 기존 galleryImages 클릭 이벤트 수정: showPopup 함수 사용
 galleryImages.forEach((img, idx) => {
    img.onclick = () => {
       showPopup(idx);
    };
 });
 
-// 팝업 이미지 클릭 시 다음 이미지로 넘어가기
+imagePop.onclick = () => {
+   imagePop.style.display = 'none';
+};
+
 imagePop.querySelector('img').onclick = (e) => {
-   e.stopPropagation(); // 팝업 닫기 이벤트 방지
+   e.stopPropagation();
    currentIndex = (currentIndex + 1) % galleryImages.length;
    showPopup(currentIndex);
 };
