@@ -48,15 +48,17 @@ body {
    padding: 10px 30px;
    cursor: pointer;
    font-size: 17px;
-   background-color: var(--light-bg);
-   color: var(--black);
+   background-color: transparent;
+   color: #007bff;
    text-transform: capitalize;
    text-align: center;
 }
 
 .btn:hover {
-   background-color: var(--crimson);
+   background-color: transparent;
    color: var(--white);
+   text-decoration: underline;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 .gallery {
@@ -320,4 +322,5 @@ body {
   animation-fill-mode: forwards;
 
 }
+
 
