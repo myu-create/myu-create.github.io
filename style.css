@@ -31,7 +31,7 @@ body {
    background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-   background-color: var(--black);
+   background-color: #007bff;
 }
 
 .heading {
@@ -320,3 +320,4 @@ body {
   animation-fill-mode: forwards;
 
 }
+
