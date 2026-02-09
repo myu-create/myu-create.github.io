@@ -12,7 +12,7 @@
 }
 
 * {
-   font-family: 'Lora', serif;
+   font-family: 'Roboto Mono', monospace;
    margin: 0; padding: 0;
    box-sizing: border-box;
    outline: none; border: none;
@@ -135,8 +135,11 @@ body {
 }
 
 .side-bar .btn.active {
-   background-color: var(--crimson);
+   background-color: transparent;
    color: var(--white);
+   text-decoration: underline;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+   font-weight: bold;
 }
 
 .side-bar .box #search-box {
@@ -176,7 +179,7 @@ body {
    position: fixed;
    top: 0; left: 0;
    z-index: 1200;
-   background-color: var(--dark-bg);
+   background-color: rgba(0, 123, 255, 0.8);
    height: 100vh;
    width: 100%;
    display: none;
@@ -322,5 +325,4 @@ body {
   animation-fill-mode: forwards;
 
 }
-
 
